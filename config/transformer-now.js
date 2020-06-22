@@ -7,8 +7,8 @@ module.exports = function transformer({ headers }) {
   const config = {
     version: 2,
     public: true,
-    name: "mc-custom-app-3u6j8j4by.vercel.app",
-    alias: "mc-custom-app-3u6j8j4by.vercel.app",
+    // name: "mc-custom-app.jamesgong-qantasloyalt.vercel.app",
+    alias: "mc-custom-app.jamesgong-qantasloyalt.vercel.app",
     regions: ["bru"],
     builds: [
       { src: "public/**", use: "@now/static" },
@@ -29,7 +29,7 @@ module.exports = function transformer({ headers }) {
     ],
   };
   fs.writeFileSync(
-    path.join(rootPath, "now.json"),
+    path.join(rootPath, "vercel.json"),
     JSON.stringify(config, null, 2),
     { encoding: "utf8" }
   );
