@@ -1,8 +1,7 @@
 {
-    "csp": {
-      "script-src": ["mc-extensions-channels.now.sh", "localhost:*"],
-      "connect-src": ["mc-extensions-channels.now.sh", "localhost:*"],
-      "style-src": ["mc-extensions-channels.now.sh", "localhost:*"]
-    }
+  "csp": {
+    "script-src": [],
+    "connect-src": ["${env:MC_API_HOSTNAME}"],
+    "style-src": []
   }
-  
+}

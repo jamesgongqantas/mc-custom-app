@@ -1,0 +1,11 @@
+{
+  "csp": {
+    "script-src": ["mc-custom-app-3u6j8j4by.vercel.app"],
+    "connect-src": [
+      "mc-custom-app-3u6j8j4by.vercel.app",
+      "mc-api.australia-southeast1.gcp.commercetools.com",
+      "mc-api.commercetools.com"
+    ],
+    "style-src": ["mc-custom-app-3u6j8j4by.vercel.app"]
+  }
+}

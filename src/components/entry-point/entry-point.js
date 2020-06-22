@@ -19,15 +19,17 @@ const AsyncApplicationRoutes = React.lazy(() =>
 
 export const ApplicationStarter = () => (
   <Switch>
-    {/* For development, it's useful to redirect to the actual
+    {
+      /* For development, it's useful to redirect to the actual
       application routes when you open the browser at http://localhost:3001 */
-    process.env.NODE_ENV === 'production' ? null : (
-      <Redirect
-        exact={true}
-        from="/:projectKey"
-        to="/:projectKey/examples-starter"
-      />
-    )}
+      process.env.NODE_ENV === 'production' ? null : (
+        <Redirect
+          exact={true}
+          from="/:projectKey"
+          to="/:projectKey/examples-starter"
+        />
+      )
+    }
     <Route
       path="/:projectKey/examples-starter"
       component={AsyncApplicationRoutes}
@@ -49,12 +51,12 @@ class EntryPoint extends React.Component {
       <ApplicationShell
         environment={window.app}
         onRegisterErrorListeners={({ dispatch }) => {
-          Sdk.Get.errorHandler = error =>
+          Sdk.Get.errorHandler = (error) =>
             globalActions.handleActionError(error, 'sdk')(dispatch);
         }}
         applicationMessages={loadMessages}
         DEV_ONLY__loadNavbarMenuConfig={() =>
-          import('../../../menu.json').then(data => data.default || data)
+          import('../../../menu.json').then((data) => data.default || data)
         }
         featureFlags={FEATURE_FLAGS}
         render={() => <ApplicationStarter />}
